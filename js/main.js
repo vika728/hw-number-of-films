@@ -16,7 +16,7 @@ let personalMovieDB = {
 }
 
 for (i = 0; i < 1; i++) {
-    if(name != '' && moviePersonal != '' && chekOut != '' && name != null && moviePersonal != null && chekOut != null && moviePersonal.length > 50) {
+    if(name != '' && moviePersonal != '' && chekOut != '' && name != null && moviePersonal != null && chekOut != null && moviePersonal.length < 50) {
         personalMovieDB.movies[moviePersonal] = chekOut;
         alert(`${name}, thanks `);
     }else{
@@ -35,4 +35,18 @@ if (personalMovieDB.count<10){
     alert(`${name}, error`)
 }
 console.log(personalMovieDB);
-// console.log(personalMovieDB.movies);
+
+function showMyDB (privat) {
+    if (privat != true){
+        console.log(personalMovieDB);
+    }
+}
+showMyDB(prompt('enter the bollean:'))
+
+function writeYourGenres(){
+    for (i = 1; i <= 3; i++) {
+    personalMovieDB.genres[i - 1] = prompt(`Write ur favorite film number ${i}`);   
+    }
+}
+writeYourGenres()
+console.log(personalMovieDB.genres);
